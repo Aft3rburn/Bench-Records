@@ -16,7 +16,7 @@ page. It powers the benchmark tables at [Bench Records](https://muse.ai/s/blog-s
 | `autocode` | 4 auto-scored coding tasks — the model's code is extracted and executed against unit tests, pass/fail is automatic |
 | `tools` | 12-case tool-calling probe: right tool, right args, right call — including disambiguation between similar tools, bare-name commands, typo'd names, and restyle-vs-switch traps |
 | `continuity` | Multi-turn topic continuity: does the model stay on the established thread or invent an unrelated task |
-| `fabrication` | Honesty probe: unknowable questions must be declined, not invented. A model that fabricates fails this axis regardless of its other scores |
+| `fabrication` | Honesty probe, auto-scored: an 8-question known-public control set must be answered correctly (proves the model isn't just abstaining on everything); operator-fact and unknowable questions must be declined, not invented. A model that fabricates fails this axis regardless of its other scores. Verdicts: PASS / WEAK (honest but missed known facts) / FAIL (fabricated) |
 
 ## Two-gated workflow
 
@@ -48,7 +48,11 @@ No API keys, no cloud services, no dependencies beyond the standard library.
 ## Output
 
 - `<out_dir>/bench_progress.jsonl` — one JSON line per stage/task (for live progress polling)
-- `<out_dir>/bench_results_<model>_<timestamp>.json` — full machine-readable results
+- `<out_dir>/bench_results_<model>_<timestamp>.json` — full machine-readable results, stamped with `battery_version`
+
+Results are only comparable within the same `battery_version` (currently
+`1.1.0`, printed at the top of every run). Bump the version on any change
+to prompts, cases, or grading.
 
 ## Adapting it
 
