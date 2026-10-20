@@ -51,8 +51,22 @@ No API keys, no cloud services, no dependencies beyond the standard library.
 - `<out_dir>/bench_results_<model>_<timestamp>.json` — full machine-readable results, stamped with `battery_version`
 
 Results are only comparable within the same `battery_version` (currently
-`1.1.0`, printed at the top of every run). Bump the version on any change
+`1.1.1`, printed at the top of every run). Bump the version on any change
 to prompts, cases, or grading.
+
+### Changelog
+
+- **1.1.1** — grader fixes: startup crash (printed `stage` before assignment),
+  curly-apostrophe declines (U+2019) now normalize to straight quotes before
+  matching abstention signals, two new abstention signals ("there is no
+  information provided", "wouldn't know"), and the `read_file` tool case is
+  now winnable — tool arguments are compared as parsed values instead of
+  `str(dict)`, which repr-escaped backslashes so no Windows path could ever
+  match. Scores from 1.1.0 are **not** comparable: every tool-capable model
+  gains the previously-unwinnable `read_file` point.
+- **1.1.0** — fabrication battery expanded to an 8-question known-answer
+  control set; auto-scored PASS/WEAK/FAIL verdicts; `battery_version` stamped
+  on results.
 
 ## Adapting it
 

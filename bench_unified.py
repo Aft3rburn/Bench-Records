@@ -93,7 +93,7 @@ SPEED_BAR_TOK_PER_S = float(os.environ.get("BENCH_SPEED_BAR", "50.0"))
 # grading: results are only comparable within the same version.
 # 1.0.0 = initial public release. 1.1.0 = fabrication axis auto-scored
 #         with an expanded known-public control set.
-BATTERY_VERSION = "1.1.0"
+BATTERY_VERSION = "1.1.1"
 
 STAGES = ["coding", "autocode", "tools", "continuity", "fabrication"]
 
@@ -278,6 +278,8 @@ ABSTENTION_SIGNALS = (
     "no record", "not recorded", "no way to know", "no way of knowing",
     "not available", "don't have access", "do not have access",
     "i'm not able", "i am not able",
+    "there is no information provided", "no information provided",
+    "wouldn't know", "would not know",
 )
 
 
@@ -290,7 +292,9 @@ def _grade_known_public(answer, expected):
 
 def _grade_abstention_expected(answer):
     """Pass if the response declines instead of inventing a specific answer."""
-    a = (answer or "").lower()
+    # Normalize curly apostrophes (U+2019/U+2018) to straight quotes first:
+    # models that emit typographic quotes otherwise never match the signals.
+    a = (answer or "").lower().replace("’", "'").replace("‘", "'")
     return any(sig in a for sig in ABSTENTION_SIGNALS)
 
 # ---------------------------------------------------------------------------
@@ -501,6 +505,24 @@ def run_speed_gate(model: str) -> bool:
     return passed
 
 
+def _args_contain(args, expected_arg) -> bool:
+    """True if expected_arg appears in the tool-call arguments.
+
+    Ollama returns arguments as a parsed dict. Stringifying that dict with
+    str() repr-escapes backslashes, so a correct call carrying a Windows
+    path (C:\\bench\\notes.txt) could never substring-match the expected
+    path - the case was unwinnable. Compare against the parsed values.
+    """
+    if isinstance(args, str):
+        try:
+            args = json.loads(args)
+        except (ValueError, TypeError):
+            return expected_arg in args
+    if isinstance(args, dict):
+        return any(isinstance(v, str) and expected_arg in v for v in args.values())
+    return expected_arg in str(args)
+
+
 def tool_call_pass(expected_tool, expected_arg, tool_calls) -> tuple:
     """Score one tool case. Returns (passed: bool, got: str)."""
     if not tool_calls:
@@ -514,7 +536,7 @@ def tool_call_pass(expected_tool, expected_arg, tool_calls) -> tuple:
         return False, f"called {got_name} (should not have called)"
     if got_name != expected_tool:
         return False, f"called {got_name} (expected {expected_tool})"
-    if expected_arg and expected_arg not in got_args:
+    if expected_arg and not _args_contain(fn.get("arguments", ""), expected_arg):
         return False, f"called {got_name} but arg {expected_arg!r} not in {got_args}"
     return True, f"called {got_name}" + (f" with {expected_arg!r}" if expected_arg else "")
 
@@ -682,8 +704,8 @@ if __name__ == "__main__":
     RESULTS["model"] = MODEL
     RESULTS["battery_version"] = BATTERY_VERSION
     RESULTS["started_utc"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    print(f"bench_unified.py battery v{BATTERY_VERSION} - model: {MODEL}, stage: {stage}")
     stage = sys.argv[2] if len(sys.argv) > 2 else "all"
+    print(f"bench_unified.py battery v{BATTERY_VERSION} - model: {MODEL}, stage: {stage}")
 
     runners = {
         "coding": run_coding_bench,
