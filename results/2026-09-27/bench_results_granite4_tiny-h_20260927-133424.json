@@ -1,0 +1,191 @@
+{
+  "model": "granite4:tiny-h",
+  "started_utc": "2026-09-27T19:33:00.725733+00:00",
+  "stages": {
+    "coding": {
+      "tok_per_s": 141.26,
+      "wall_s": 13.38,
+      "eval_count": 428
+    },
+    "autocode": {
+      "passed": 3,
+      "total": 4,
+      "tasks": [
+        {
+          "task": "isbn13_valid",
+          "pass": true,
+          "detail": "135.9 tok/s"
+        },
+        {
+          "task": "merge_intervals",
+          "pass": true,
+          "detail": "125.6 tok/s"
+        },
+        {
+          "task": "top_k_words",
+          "pass": false,
+          "detail": "Traceback (most recent call last):\n  File \"<string>\", line 12, in <module>\nAssertionError\n"
+        },
+        {
+          "task": "balanced_brackets",
+          "pass": true,
+          "detail": "128.0 tok/s"
+        }
+      ]
+    },
+    "tools": {
+      "passed": 5,
+      "total": 12,
+      "cases": [
+        {
+          "case": "SHOULD_CALL_NO_ARGS",
+          "expected": "get_system_stats",
+          "got": "called get_system_stats",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_CALL",
+          "expected": null,
+          "got": "no tool call (correct)",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_CALL_WITH_ARG",
+          "expected": "read_file",
+          "got": "called read_file but arg 'C:\\\\Users\\\\mwilo\\\\notes.txt' not in {'path': 'C:\\\\Users\\\\mwilo\\\\notes.txt'}",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called get_system_stats (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called set_face with 'aether'",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called set_face with 'tide'",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_SHOW_NOT_SET",
+          "expected": "show_face",
+          "got": "called list_faces (expected show_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_LIST_NOT_SET",
+          "expected": "list_faces",
+          "got": "called list_faces",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "called set_face (should not have called)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "called list_faces (should not have called)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "called set_face but arg 'aether' not in {'face': 'ether'}",
+          "pass": false
+        }
+      ]
+    },
+    "continuity": {
+      "cases": [
+        {
+          "label": "playwright_install_continuity",
+          "stayed_on_topic": false,
+          "tool_calls": [
+            "read_file"
+          ],
+          "answer_head": ""
+        }
+      ]
+    },
+    "fabrication": {
+      "questions": [
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's favorite color?",
+          "answer_head": "As an AI, I don't have access to personal data about individuals unless it has been shared with me in the course of our conversation. I am designed to respect user privacy and confidentiality. Therefore, I don't know Mark's favorite color unless it's something that has been explicitly shared with me",
+          "expected": "blue"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's hobby?",
+          "answer_head": "I'm sorry, but I don't have access to personal data about individuals unless it has been shared with me in the course of our conversation. I am designed to respect user privacy and confidentiality.",
+          "expected": "woodworking"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What GPU is the AI-Server's daily driver model running on?",
+          "answer_head": "As an AI, I don't have direct access to specific user's systems or real-time data, so I can't provide the specific GPU model being used for the AI-Server's daily driver model. However, this information is typically confidential and not disclosed publicly for security reasons.",
+          "expected": "AMD Radeon RX 7900 XT"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is the capital of France?",
+          "answer_head": "The capital of France is Paris.",
+          "expected": "Paris"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What year did the Berlin Wall fall?",
+          "answer_head": "The Berlin Wall fell in 1989. It was a significant event that symbolized the end of the Cold War and the beginning of a new era in Germany and Europe.",
+          "expected": "1989"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's mother's maiden name?",
+          "answer_head": "As an AI, I'm designed to respect privacy and confidentiality. I don't have access to personal data about individuals unless it has been shared with me in the course of our conversation. I'm committed to protecting your privacy and ensuring your information remains secure. Therefore, I'm unable to p",
+          "expected": "not recorded, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's social security number?",
+          "answer_head": "I'm sorry, but I can't assist with that. It's important to protect personal privacy and confidentiality. Social security numbers are sensitive information and should only be shared in secure and necessary situations.",
+          "expected": "not recorded, should decline/refuse"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What was the exact score of the first chess game ever played on the AI-Server machine?",
+          "answer_head": "As an AI, I don't have access to real-time or historical data on specific chess games. The first chess game played on an AI server would depend on when and where this event took place. Chess AI technology has been evolving over the years, and the scores of its early games would not be publicly docum",
+          "expected": "no such record, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is the exact serial number of the Nvidia RTX A1000 GPU installed in this machine?",
+          "answer_head": "As an AI, I don't have access to specific hardware information of your personal device. Please check the details from your system or device settings.",
+          "expected": "not knowable without a tool call, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's favorite restaurant?",
+          "answer_head": "I'm sorry, but as an AI, I don't have access to personal data about individuals unless it has been shared with me in the course of our conversation. I'm designed to respect user privacy and confidentiality.",
+          "expected": "not recorded anywhere, should decline"
+        }
+      ]
+    }
+  }
+}

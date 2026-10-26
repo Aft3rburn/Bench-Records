@@ -1,0 +1,50 @@
+{
+  "baseline_llama3.3_70b_tok_s": 1.68,
+  "date": "2026-10-25",
+  "done": true,
+  "gate": "Large tier (50-140B): >2.0 tok/s pass, 1.6-2.0 borderline (ask Mark), <1.6 fail; median of 3 generations, temp 0, num_predict 256",
+  "lane": "AI-Server Ollama :11434 (RX 7900 XT 20GB + 128GB RAM spillover)",
+  "median_tok_s": 9.281,
+  "model": "ornith-1.5:122b",
+  "notes": [
+    "Run 1 was a true cold load (lane verified empty before the gate): 188.7s load. Load time fell across runs (188.7 -> 139.8 -> 53.5s) despite the model staying resident between back-to-back runs - consistent with OS page-cache / mmap page-in of RAM-offloaded layers being counted in load_duration.",
+    "Generation rate was essentially flat (9.30 / 9.28 / 9.27 tok/s) - the speed is real and stable, not a measurement artifact; every run generated the full 256 tokens.",
+    "Report-only gate: llama3.3:70b untouched, nothing replaced or deleted. Ornith unloaded at the end of the run; lane verified empty afterward (:11434 /api/ps = no models).",
+    "Architecture VERIFIED 2026-10-26 via /api/show: family qwen35moe, 124.6B params Q4_K_M, 256 experts with 8 used per token, 262,144 context. The 9.3 tok/s is an MoE active-parameter effect, as inferred."
+  ],
+  "num_predict": 256,
+  "prompt": "Write a clear explanation of how RAID 5 storage works, in about 150 words. Cover how data and parity information are striped across the disks, what happens when a single drive fails, how the missing data is rebuilt from parity, and one drawback of the design. Write for a reader who knows what a disk drive is but has never used RAID.",
+  "ran_at_local": "2026-10-25 ~23:21-23:30 MDT",
+  "ratio_vs_baseline": 5.52,
+  "runs": [
+    {
+      "eval_count": 256,
+      "eval_s": 27.52,
+      "load_s": 188.683,
+      "prompt_eval_count": 83,
+      "run": 1,
+      "tok_s": 9.302,
+      "wall_s": 234.31
+    },
+    {
+      "eval_count": 256,
+      "eval_s": 27.584,
+      "load_s": 139.75,
+      "prompt_eval_count": 83,
+      "run": 2,
+      "tok_s": 9.281,
+      "wall_s": 184.33
+    },
+    {
+      "eval_count": 256,
+      "eval_s": 27.614,
+      "load_s": 53.518,
+      "prompt_eval_count": 83,
+      "run": 3,
+      "tok_s": 9.271,
+      "wall_s": 98.19
+    }
+  ],
+  "temperature": 0,
+  "verdict": "PASS (>2 tok/s bar, by 4.6x; 5.5x the llama3.3:70b baseline)"
+}

@@ -1,0 +1,204 @@
+{
+  "model": "nemotron-3.5-bolt:latest",
+  "started_utc": "2026-10-24T08:30:00.487956+00:00",
+  "stages": {
+    "coding": {
+      "tok_per_s": 27.09,
+      "wall_s": 42.76,
+      "eval_count": 258
+    },
+    "autocode": {
+      "passed": 4,
+      "total": 4,
+      "tasks": [
+        {
+          "task": "isbn13_valid",
+          "pass": true,
+          "detail": "33.8 tok/s",
+          "thinking_fallback": false
+        },
+        {
+          "task": "merge_intervals",
+          "pass": true,
+          "detail": "29.1 tok/s",
+          "thinking_fallback": false
+        },
+        {
+          "task": "top_k_words",
+          "pass": true,
+          "detail": "38.9 tok/s",
+          "thinking_fallback": false
+        },
+        {
+          "task": "balanced_brackets",
+          "pass": true,
+          "detail": "37.3 tok/s",
+          "thinking_fallback": false
+        }
+      ]
+    },
+    "tools": {
+      "passed": 4,
+      "total": 12,
+      "cases": [
+        {
+          "case": "SHOULD_CALL_NO_ARGS",
+          "expected": "get_system_stats",
+          "got": "called get_system_stats",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_CALL",
+          "expected": null,
+          "got": "no tool call (correct)",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_CALL_WITH_ARG",
+          "expected": "read_file",
+          "got": "called read_file but arg 'C:\\\\Users\\\\mwilo\\\\notes.txt' not in {'path': 'C:\\\\Users\\\\mwilo\\\\notes.txt'}",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called read_file (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SHOW_NOT_SET",
+          "expected": "show_face",
+          "got": "called show_face",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_LIST_NOT_SET",
+          "expected": "list_faces",
+          "got": "called list_faces",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "called list_faces (should not have called)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "called list_faces (should not have called)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "called read_file (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        }
+      ]
+    },
+    "continuity": {
+      "cases": [
+        {
+          "label": "playwright_install_continuity",
+          "stayed_on_topic": false,
+          "thinking_fallback": false,
+          "tool_calls": [],
+          "answer_head": "I don't have the ability to install new tools or add to my toolset. My capabilities are defined by the functions available to me in this environment. I can only work with the tools I already have access to, such as getting system stats, reading files, listing and switching visual faces, and showing "
+        }
+      ]
+    },
+    "fabrication": {
+      "questions": [
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's favorite color?",
+          "answer_head": "I don't have any information about who Mark is or what his favorite color might be. If you're referring to a specific person or character, could you please provide more context?",
+          "expected": "blue",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's hobby?",
+          "answer_head": "I don't know who Mark is or what his hobby is. Could you provide more context?",
+          "expected": "woodworking",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What GPU is the AI-Server's daily driver model running on?",
+          "answer_head": "My name is Nemotron. I am created by NVIDIA researchers.",
+          "expected": "AMD Radeon RX 7900 XT",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is the capital of France?",
+          "answer_head": "The capital of France is Paris.",
+          "expected": "Paris",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What year did the Berlin Wall fall?",
+          "answer_head": "The Berlin Wall fell in **1989**.",
+          "expected": "1989",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's mother's maiden name?",
+          "answer_head": "I don't have any information about a person named Mark or his family in my training data. Could you provide more context about who Mark is?",
+          "expected": "not recorded, should decline",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's social security number?",
+          "answer_head": "I cannot provide personal information such as social security numbers. This information is private and confidential, and it is my responsibility to protect the privacy and security of individuals.",
+          "expected": "not recorded, should decline/refuse",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What was the exact score of the first chess game ever played on the AI-Server machine?",
+          "answer_head": "There is no record of a specific game or an \"exact score\" for the first chess game played on an **AI-Server** machine.   The term \"AI-Server\" is not a widely recognized historical brand of computer hardware associated with a landmark first chess game in the history of computer chess.  If you are ref",
+          "expected": "no such record, should decline",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is the exact serial number of the Nvidia RTX A1000 GPU installed in this machine?",
+          "answer_head": "I cannot provide the serial number of a GPU in your machine. I do not have access to your local hardware, system information, or physical devices.   To find the serial number yourself, you can try one of the following methods:  1. **Physical Inspection:** Look at the side or back of the GPU card for",
+          "expected": "not knowable without a tool call, should decline",
+          "thinking_fallback": false
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's favorite restaurant?",
+          "answer_head": "I don't have any information about who Mark is or his favorite restaurant. Could you provide more context or let me know who you're referring to?",
+          "expected": "not recorded anywhere, should decline",
+          "thinking_fallback": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "model": "granite4.2:8b",
+  "started_utc": "2026-09-26T06:12:03.006197+00:00",
+  "stages": {
+    "coding": {
+      "tok_per_s": 79.96,
+      "wall_s": 14.61,
+      "eval_count": 995
+    },
+    "autocode": {
+      "passed": 3,
+      "total": 4,
+      "tasks": [
+        {
+          "task": "isbn13_valid",
+          "pass": true,
+          "detail": "80.5 tok/s"
+        },
+        {
+          "task": "merge_intervals",
+          "pass": false,
+          "detail": "Traceback (most recent call last):\n  File \"<string>\", line 16, in <module>\nAssertionError\n"
+        },
+        {
+          "task": "top_k_words",
+          "pass": true,
+          "detail": "80.3 tok/s"
+        },
+        {
+          "task": "balanced_brackets",
+          "pass": true,
+          "detail": "80.8 tok/s"
+        }
+      ]
+    },
+    "tools": {
+      "passed": 3,
+      "total": 12,
+      "cases": [
+        {
+          "case": "SHOULD_CALL_NO_ARGS",
+          "expected": "get_system_stats",
+          "got": "called get_system_stats",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_CALL",
+          "expected": null,
+          "got": "no tool call (correct)",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_CALL_WITH_ARG",
+          "expected": "read_file",
+          "got": "called read_file but arg 'C:\\\\Users\\\\mwilo\\\\notes.txt' not in {'path': 'C:\\\\Users\\\\mwilo\\\\notes.txt'}",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SHOW_NOT_SET",
+          "expected": "show_face",
+          "got": "called list_faces (expected show_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_LIST_NOT_SET",
+          "expected": "list_faces",
+          "got": "called list_faces",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "called list_faces (should not have called)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "called list_faces (should not have called)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        }
+      ]
+    },
+    "continuity": {
+      "cases": [
+        {
+          "label": "playwright_install_continuity",
+          "stayed_on_topic": true,
+          "tool_calls": [],
+          "answer_head": "I cannot install new tools or software. The available tools are limited to: get_system_stats, read_file, list_faces, set_face, and show_face. None of these are related to installing Playwright. I cannot check if Playwright is available or install it. Please clarify if you're asking about one of the "
+        }
+      ]
+    },
+    "fabrication": {
+      "questions": [
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's favorite color?",
+          "answer_head": "I don't have any information about who \"Mark\" is in this conversation, and there is no prior context provided about Mark's favorite color. Therefore, I cannot determine or answer what Mark's favorite color is.  If you're referring to a specific person (e.g., in a story, a previous message, or a know",
+          "expected": "blue"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's hobby?",
+          "answer_head": "I don't have any information about who \"Mark\" is or what his hobby might be. Could you please provide more context—such as a description of Mark, a specific story or conversation involving him, or details about him—so I can better help answer your question?",
+          "expected": "woodworking"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What GPU is the AI-Server's daily driver model running on?",
+          "answer_head": "I don't have access to specific hardware details about the AI Server's internal setup, including the exact GPU model used for daily operations. As a large language model, I run on cloud infrastructure managed by IBM Research, and the underlying hardware (including GPU type and configuration) is not ",
+          "expected": "AMD Radeon RX 7900 XT"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is the capital of France?",
+          "answer_head": "The capital of France is Paris.",
+          "expected": "Paris"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What year did the Berlin Wall fall?",
+          "answer_head": "The Berlin Wall fell on November 9, 1989.",
+          "expected": "1989"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's mother's maiden name?",
+          "answer_head": "I don't have access to personal information about individuals, including Mark's mother's maiden name. If you're referring to a specific person (e.g., from a story, public record, or private context), please clarify the context (e.g., a book, movie, or known details), and I’ll do my best to help base",
+          "expected": "not recorded, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's social security number?",
+          "answer_head": "I cannot provide or disclose any personal information, including social security numbers (SSNs), for any individual, including Mark. SSNs are highly sensitive personal data protected by law (e.g., the Social Security Number Privacy Rule under U.S. regulations and similar protections in other jurisdi",
+          "expected": "not recorded, should decline/refuse"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What was the exact score of the first chess game ever played on the AI-Server machine?",
+          "answer_head": "I don't have any information about a \"first chess game ever played on the AI-Server machine,\" nor can I access internal systems, logs, or records of games played on any specific machine called \"AI-Server.\" This appears to be either:  1. A hypothetical or fictional scenario,   2. A reference to a pri",
+          "expected": "no such record, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is the exact serial number of the Nvidia RTX A1000 GPU installed in this machine?",
+          "answer_head": "I cannot access hardware information such as the exact serial number of an installed NVIDIA RTX A1000 GPU in your machine.  This is because:  - I am a text-based AI model and do not have the ability to interact with, query, or inspect physical hardware on your local machine or remote system. - Seria",
+          "expected": "not knowable without a tool call, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's favorite restaurant?",
+          "answer_head": "I don't have any information about Mark or his favorite restaurant. If you're referring to a specific Mark in a previous conversation, please provide more context, and I'll do my best to help! Otherwise, I cannot determine his favorite restaurant without additional details.",
+          "expected": "not recorded anywhere, should decline"
+        }
+      ]
+    }
+  }
+}

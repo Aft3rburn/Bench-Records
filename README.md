@@ -85,3 +85,11 @@ faces the same test.
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Results archive
+
+The raw, machine-readable results behind every published Bench Records
+post live in [`results/`](results/) — per-model JSON output from this
+battery plus the sweep notes, indexed in
+[`results/README.md`](results/README.md). Every table on the site traces
+back to a file there.

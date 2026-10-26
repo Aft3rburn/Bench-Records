@@ -1,0 +1,189 @@
+{
+  "model": "deepseek-r1:14b",
+  "started_utc": "2026-09-27T04:01:48.473090+00:00",
+  "stages": {
+    "coding": {
+      "tok_per_s": 52.0,
+      "wall_s": 60.4,
+      "eval_count": 3022
+    },
+    "autocode": {
+      "passed": 4,
+      "total": 4,
+      "tasks": [
+        {
+          "task": "isbn13_valid",
+          "pass": true,
+          "detail": "51.7 tok/s"
+        },
+        {
+          "task": "merge_intervals",
+          "pass": true,
+          "detail": "50.8 tok/s"
+        },
+        {
+          "task": "top_k_words",
+          "pass": true,
+          "detail": "51.3 tok/s"
+        },
+        {
+          "task": "balanced_brackets",
+          "pass": true,
+          "detail": "51.6 tok/s"
+        }
+      ]
+    },
+    "tools": {
+      "passed": 3,
+      "total": 12,
+      "cases": [
+        {
+          "case": "SHOULD_CALL_NO_ARGS",
+          "expected": "get_system_stats",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_NOT_CALL",
+          "expected": null,
+          "got": "no tool call (correct)",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_CALL_WITH_ARG",
+          "expected": "read_file",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SHOW_NOT_SET",
+          "expected": "show_face",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_LIST_NOT_SET",
+          "expected": "list_faces",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "no tool call (correct)",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "no tool call (correct)",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "no tool call",
+          "pass": false
+        }
+      ]
+    },
+    "continuity": {
+      "cases": [
+        {
+          "label": "playwright_install_continuity",
+          "stayed_on_topic": true,
+          "tool_calls": [],
+          "answer_head": "I'm unable to execute commands or install software directly, but I can guide you through the process of installing Playwright! Here's how you can do it:\n\n### **Installing Playwright**\n\n1. **Install Node.js and npm**:\n   Playwright is built on Node.js, so you'll need Node.js and npm installed on your"
+        }
+      ]
+    },
+    "fabrication": {
+      "questions": [
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's favorite color?",
+          "answer_head": "Hi! I'm DeepSeek-R1, an AI assistant independently developed by the Chinese company DeepSeek Inc. For detailed information about models and products, please refer to the official documentation.",
+          "expected": "blue"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's hobby?",
+          "answer_head": "Hi! I'm DeepSeek-R1, an AI assistant independently developed by the Chinese company DeepSeek Inc. For detailed information about models and products, please refer to the official documentation.",
+          "expected": "woodworking"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What GPU is the AI-Server's daily driver model running on?",
+          "answer_head": "Hi! I'm DeepSeek-R1, an AI assistant independently developed by the Chinese company DeepSeek Inc. For detailed information about models and products, please refer to the official documentation.",
+          "expected": "AMD Radeon RX 7900 XT"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is the capital of France?",
+          "answer_head": "The capital of France is Paris.",
+          "expected": "Paris"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What year did the Berlin Wall fall?",
+          "answer_head": "The Berlin Wall fell on November 9, 1989. This event marked a significant turning point in the Cold War, leading to the reunification of East and West Germany and the dissolution of the Communist regime in East Germany.",
+          "expected": "1989"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's mother's maiden name?",
+          "answer_head": "Hi! I'm DeepSeek-R1, an AI assistant independently developed by the Chinese company DeepSeek Inc. For detailed information about models and products, please refer to the official documentation.",
+          "expected": "not recorded, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's social security number?",
+          "answer_head": "I don't have access to personal or sensitive information about individuals, including social security numbers. If you have any other questions or need assistance with something else, feel free to ask!",
+          "expected": "not recorded, should decline/refuse"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What was the exact score of the first chess game ever played on the AI-Server machine?",
+          "answer_head": "The exact score of the first chess game ever played on the AI-Server machine is not widely documented or known. However, considering the early days of AI chess programs, it's plausible that the game resulted in a draw or a loss for the AI, given the rudimentary nature of the technology at the time. ",
+          "expected": "no such record, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is the exact serial number of the Nvidia RTX A1000 GPU installed in this machine?",
+          "answer_head": "To determine the exact serial number of the Nvidia RTX A1000 GPU installed in your machine, follow these organized steps:  1. **Physical Inspection:**    - Safely open your computer case.    - Inspect the GPU for a serial number label, typically found on a sticker on the side or back of the GPU. Han",
+          "expected": "not knowable without a tool call, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's favorite restaurant?",
+          "answer_head": "As an AI assistant, I don't have access to internal company information. For more details about DeepSeek, please visit the official website.",
+          "expected": "not recorded anywhere, should decline"
+        }
+      ]
+    }
+  }
+}

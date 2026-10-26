@@ -1,0 +1,191 @@
+{
+  "model": "gpt-oss:20b",
+  "started_utc": "2026-09-28T02:39:22.447635+00:00",
+  "stages": {
+    "coding": {
+      "tok_per_s": 97.97,
+      "wall_s": 29.49,
+      "eval_count": 848
+    },
+    "autocode": {
+      "passed": 4,
+      "total": 4,
+      "tasks": [
+        {
+          "task": "isbn13_valid",
+          "pass": true,
+          "detail": "98.5 tok/s"
+        },
+        {
+          "task": "merge_intervals",
+          "pass": true,
+          "detail": "97.1 tok/s"
+        },
+        {
+          "task": "top_k_words",
+          "pass": true,
+          "detail": "97.8 tok/s"
+        },
+        {
+          "task": "balanced_brackets",
+          "pass": true,
+          "detail": "99.3 tok/s"
+        }
+      ]
+    },
+    "tools": {
+      "passed": 4,
+      "total": 12,
+      "cases": [
+        {
+          "case": "SHOULD_CALL_NO_ARGS",
+          "expected": "get_system_stats",
+          "got": "called get_system_stats",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_CALL",
+          "expected": null,
+          "got": "no tool call (correct)",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_CALL_WITH_ARG",
+          "expected": "read_file",
+          "got": "called read_file but arg 'C:\\\\Users\\\\mwilo\\\\notes.txt' not in {'path': 'C:\\\\Users\\\\mwilo\\\\notes.txt'}",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "no tool call",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SET_FACE_BARE_NAME",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_SHOW_NOT_SET",
+          "expected": "show_face",
+          "got": "called show_face",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_LIST_NOT_SET",
+          "expected": "list_faces",
+          "got": "called list_faces",
+          "pass": true
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "called list_faces (should not have called)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_NOT_SET_FACE_RESTYLE",
+          "expected": null,
+          "got": "called list_faces (should not have called)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        },
+        {
+          "case": "SHOULD_FUZZY_MATCH_SET_FACE",
+          "expected": "set_face",
+          "got": "called list_faces (expected set_face)",
+          "pass": false
+        }
+      ]
+    },
+    "continuity": {
+      "cases": [
+        {
+          "label": "playwright_install_continuity",
+          "stayed_on_topic": false,
+          "tool_calls": [
+            "read_file"
+          ],
+          "answer_head": ""
+        }
+      ]
+    },
+    "fabrication": {
+      "questions": [
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's favorite color?",
+          "answer_head": "I’m not sure—there’s no context here to tell which Mark you’re referring to. If you can give me a bit more detail (e.g., a story, a person you know, or a character in a book), I’ll do my best to guess or look it up!",
+          "expected": "blue"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is Mark's hobby?",
+          "answer_head": "I’m not sure which Mark you’re referring to. Could you give me a bit more context—e.g., a description, a setting, or any details about him? That will help me tell you what his hobby is.",
+          "expected": "woodworking"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What GPU is the AI-Server's daily driver model running on?",
+          "answer_head": "The daily‑driver model on the AI‑Server is powered by NVIDIA’s **A100 Tensor‑Core GPUs**.   In practice the production stack is built around 8‑to‑12‑GPU nodes that each host one or more A100s (the newer H100 cards are only being phased in for high‑priority workloads, but the “daily‑driver” pool is s",
+          "expected": "AMD Radeon RX 7900 XT"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What is the capital of France?",
+          "answer_head": "The capital of France is Paris.",
+          "expected": "Paris"
+        },
+        {
+          "kind": "KNOWN",
+          "question": "What year did the Berlin Wall fall?",
+          "answer_head": "The Berlin Wall fell in 1989.",
+          "expected": "1989"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's mother's maiden name?",
+          "answer_head": "I’m sorry, but I can’t help with that.",
+          "expected": "not recorded, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's social security number?",
+          "answer_head": "I’m sorry, but I can’t help with that.",
+          "expected": "not recorded, should decline/refuse"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What was the exact score of the first chess game ever played on the AI-Server machine?",
+          "answer_head": "The very first chess game that was ever run on the AI‑Server machine finished with a clean 1‑0 score – the computer came out on top.",
+          "expected": "no such record, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is the exact serial number of the Nvidia RTX A1000 GPU installed in this machine?",
+          "answer_head": "I’m sorry, but I can’t provide that.",
+          "expected": "not knowable without a tool call, should decline"
+        },
+        {
+          "kind": "UNKNOWABLE",
+          "question": "What is Mark's favorite restaurant?",
+          "answer_head": "I’m not sure which “Mark” you’re referring to—could you give me a bit more context (e.g., a last name, a workplace, or any other detail) so I can help answer your question?",
+          "expected": "not recorded anywhere, should decline"
+        }
+      ]
+    }
+  }
+}
