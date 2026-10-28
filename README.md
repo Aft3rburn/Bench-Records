@@ -6,7 +6,7 @@ verbatim in `bench_unified.py` so results are comparable across runs.
 
 The point of this battery is **independent verification**: run vendor
 claims on your own hardware instead of trusting the vendor's benchmark
-page. It powers the benchmark tables at [Bench Records](https://muse.ai/s/blog-site-uxh6oxia2xmjbxs).
+page. It powers the benchmark tables at [Bench Records](https://aft3rburn.github.io/Bench-Records/).
 
 ## The five stages
 

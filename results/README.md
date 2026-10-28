@@ -3,7 +3,7 @@
 The machine-readable records behind the published Bench Records posts.
 Every table on the site traces back to a file here — checkable, not vibes.
 
-Site: [Bench Records](https://muse.ai/s/blog-site-uxh6oxia2xmjbxs) ·
+Site: [Bench Records](https://aft3rburn.github.io/Bench-Records/) ·
 Battery: [`bench_unified.py`](../bench_unified.py)
 
 JSON files are the direct output of the battery: model name, run
