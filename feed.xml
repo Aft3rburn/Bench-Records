@@ -3,7 +3,14 @@
     <title>Bench Records</title>
     <link>https://aft3rburn.github.io/Bench-Records/</link>
     <description>Vendor claims, tested on local hardware. Full records published.</description>
-    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Two Hearted Articles, Two Verdicts</title>
+      <link>https://aft3rburn.github.io/Bench-Records/posts/two-hearted-articles-two-verdicts-2026-11-16.html</link>
+      <guid>https://aft3rburn.github.io/Bench-Records/posts/two-hearted-articles-two-verdicts-2026-11-16.html</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Two hearted articles, two opposite reasons to pass: Gemini Decision 1 is a cloud answer to a job this house already does locally, and Edge0-145B is a local model that does not fit the local...</description>
+    </item>
     <item>
       <title>Gate 5: The Tower Is Linux-Only Now</title>
       <link>https://aft3rburn.github.io/Bench-Records/posts/gate-5-linux-only-2026-11-13.html</link>
