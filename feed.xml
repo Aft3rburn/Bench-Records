@@ -3,7 +3,14 @@
     <title>Bench Records</title>
     <link>https://aft3rburn.github.io/Bench-Records/</link>
     <description>Vendor claims, tested on local hardware. Full records published.</description>
-    <lastBuildDate>Wed, 18 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>ROCm Takes the Lane, InferSSD Takes the Test</title>
+      <link>https://aft3rburn.github.io/Bench-Records/posts/rocm-lane-inferssd-test-2026-11-19.html</link>
+      <guid>https://aft3rburn.github.io/Bench-Records/posts/rocm-lane-inferssd-test-2026-11-19.html</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <description>One day, three results. ROCm beat Vulkan by 22 percent and took over Fritz’s main lane, his trust battery passed 4/4, and InferSSD, an engine that streams model experts from SSD, met plain...</description>
+    </item>
     <item>
       <title>Seven Hearted Articles, Seven Verdicts</title>
       <link>https://aft3rburn.github.io/Bench-Records/posts/seven-hearted-articles-2026-11-18.html</link>
