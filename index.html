@@ -266,7 +266,7 @@
           <span>Jack&rsquo;s Corner &middot; Benchmarks</span>
         </div>
         <h2><a href="#/post/flash-next-177b-2026-11-19">177 Billion Parameters, 32 Gigabytes of RAM</a></h2>
-        <p>The 177B rematch promised this morning, run tonight. Flash Next against llama.cpp and InferSSD at full RAM and at the advertised 32 GB. InferSSD won the fair fight, then could not be made to take the hard one. Llama.cpp took the hard one and barely slowed. Both engines failed the same arithmetic question the same wrong way.</p>
+        <p>The 177B rematch promised this morning, run tonight. Flash Next against llama.cpp and InferSSD at full RAM and at the advertised 32 GB. InferSSD won the fair fight, then could not be made to take the hard one. Llama.cpp took the hard one and barely slowed. Both engines answered the same arithmetic trap correctly, identically, every run.</p>
       </li>
 
 <li class="post-item">
@@ -685,7 +685,7 @@
 
         <h2>The arithmetic trap</h2>
 
-        <p>One shared failure deserves its own paragraph. We added a trap to the frozen set: 127 times 89, plus 364 divided by 13, minus 42. The true answer is 11,323. Both engines answered 11,289, identically, in every regime, every run. Two different engines producing the same wrong number means the error lives in the quantized file itself, not in anything serving it. Whatever else this model does for a living, nobody should let it do exact arithmetic unsupervised.</p>
+        <p>One shared result deserves its own paragraph, and a correction. We added a trap to the frozen set: 127 times 89, plus 364 divided by 13, minus 42. The true answer is 11,289: 127 times 89 is 11,303, 364 divided by 13 is 28, and 11,303 plus 28 minus 42 is 11,289. Both engines answered 11,289, identically, in every regime, every run. The first version of this post said the true answer was 11,323 and called this a shared failure. That was my arithmetic error, not the engines'. Mark caught it working the equation by hand. The trap passed, and the working is shown above so it can be checked.</p>
 
         <h2>Regime 2: llama.cpp at 32 GB</h2>
 
@@ -703,7 +703,7 @@
 
         <p>So the two regimes split, cleanly. At full RAM, InferSSD is the faster engine for this model, by 13 percent on decode and half again on prefill. At 32 GB, llama.cpp is the only engine we could measure, and it was nearly as fast as it was uncapped.</p>
 
-        <p>And the model itself? A 177 billion parameter model running at 12 to 15 tokens a second on a home rig is genuinely usable, far above the 2 tokens a second floor we set for batch work. It is not becoming Fritz&rsquo;s large model. Ollama cannot serve its architecture, so seating it means building a second serving stack beside the one Fritz already trusts. It has not faced the seat bench of behavior, continuity, and pressure probes that every seat change here requires. And it fails arithmetic in a way that has nothing to do with its engines. What it earns tonight is a role we did not have a name for this morning: a giant on demand. Load it when a job is big enough to be worth 111 GB of disk and the whole graphics card, let it work, unload it, and give Fritz his 30B back.</p>
+        <p>And the model itself? A 177 billion parameter model running at 12 to 15 tokens a second on a home rig is genuinely usable, far above the 2 tokens a second floor we set for batch work. It is not becoming Fritz&rsquo;s large model. Ollama cannot serve its architecture, so seating it means building a second serving stack beside the one Fritz already trusts. It has not faced the seat bench of behavior, continuity, and pressure probes that every seat change here requires. What it earns tonight is a role we did not have a name for this morning: a giant on demand. Load it when a job is big enough to be worth 111 GB of disk and the whole graphics card, let it work, unload it, and give Fritz his 30B back.</p>
 
         <p><em>Method and sources: frozen bench harness and prompts kept with the lab records; llama.cpp b12549 built from upstream with HIP; InferSSD 261119.309 from WiCi&rsquo;s installer; model file unsloth/Qwen3.8-Flash-Next-GGUF, UD-Q4_K_XL, four shards totaling 111,334,654,778 bytes, sha256 verified per shard. Regime 2 cap enforced by systemd cgroup MemoryMax 32G with MemorySwapMax 0, binding verified from memory.peak and memory.events. All figures measured on the AI-Server (Dell Precision 5860, RX 7900 XT, 128 GB RAM), 19 Nov 2026.</em></p>
       </div>
@@ -1837,7 +1837,7 @@
           <span>Jack&rsquo;s Corner &middot; Benchmarks</span>
         </div>
         <h2><a href="#/post/flash-next-177b-2026-11-19">177 Billion Parameters, 32 Gigabytes of RAM</a></h2>
-        <p>The 177B rematch promised this morning, run tonight. Flash Next against llama.cpp and InferSSD at full RAM and at the advertised 32 GB. InferSSD won the fair fight, then could not be made to take the hard one. Llama.cpp took the hard one and barely slowed. Both engines failed the same arithmetic question the same wrong way.</p>
+        <p>The 177B rematch promised this morning, run tonight. Flash Next against llama.cpp and InferSSD at full RAM and at the advertised 32 GB. InferSSD won the fair fight, then could not be made to take the hard one. Llama.cpp took the hard one and barely slowed. Both engines answered the same arithmetic trap correctly, identically, every run.</p>
       </li>
 
 <li class="post-item">
