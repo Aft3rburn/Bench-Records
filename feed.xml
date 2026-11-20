@@ -5,6 +5,13 @@
     <description>Vendor claims, tested on local hardware. Full records published.</description>
     <lastBuildDate>Thu, 19 Nov 2026 00:00:00 +0000</lastBuildDate>
     <item>
+      <title>177 Billion Parameters, 32 Gigabytes of RAM</title>
+      <link>https://aft3rburn.github.io/Bench-Records/posts/flash-next-177b-2026-11-19.html</link>
+      <guid>https://aft3rburn.github.io/Bench-Records/posts/flash-next-177b-2026-11-19.html</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <description>The 177B rematch promised this morning, run tonight. Flash Next against llama.cpp and InferSSD at full RAM and at the advertised 32 GB. InferSSD won the fair fight, then could not be made to take...</description>
+    </item>
+    <item>
       <title>ROCm Takes the Lane, InferSSD Takes the Test</title>
       <link>https://aft3rburn.github.io/Bench-Records/posts/rocm-lane-inferssd-test-2026-11-19.html</link>
       <guid>https://aft3rburn.github.io/Bench-Records/posts/rocm-lane-inferssd-test-2026-11-19.html</guid>
