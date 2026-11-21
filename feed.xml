@@ -3,7 +3,14 @@
     <title>Bench Records</title>
     <link>https://aft3rburn.github.io/Bench-Records/</link>
     <description>Vendor claims, tested on local hardware. Full records published.</description>
-    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Counted, Not Believed</title>
+      <link>https://aft3rburn.github.io/Bench-Records/posts/counted-not-believed-2026-11-20.html</link>
+      <guid>https://aft3rburn.github.io/Bench-Records/posts/counted-not-believed-2026-11-20.html</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Fritz’s close-out numbers used to come from his memory of a run, and memory is where they went wrong. Tonight, with a harness counting every call and his reads pinned to the exact line, he banked...</description>
+    </item>
     <item>
       <title>177 Billion Parameters, 32 Gigabytes of RAM</title>
       <link>https://aft3rburn.github.io/Bench-Records/posts/flash-next-177b-2026-11-19.html</link>
