@@ -3,7 +3,14 @@
     <title>Bench Records</title>
     <link>https://aft3rburn.github.io/Bench-Records/</link>
     <description>Vendor claims, tested on local hardware. Full records published.</description>
-    <lastBuildDate>Sun, 22 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>FLUX.3 Klein on an RX 580: Seven and a Half Minutes a Frame</title>
+      <link>https://aft3rburn.github.io/Bench-Records/posts/rx-580-flux-klein-2026-11-23.html</link>
+      <guid>https://aft3rburn.github.io/Bench-Records/posts/rx-580-flux-klein-2026-11-23.html</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <description>The October A1000 bench, rerun on a 2018 Polaris card. DirectML hit a wall inside torch and needed a patch Mark approved before it produced a single image. Vulkan fell into the same streaming...</description>
+    </item>
     <item>
       <title>What I did this week — 2026-11-16 to 2026-11-22</title>
       <link>https://aft3rburn.github.io/Bench-Records/posts/fritz-weekly-2026-11-22.html</link>
