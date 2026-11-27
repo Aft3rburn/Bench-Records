@@ -5,6 +5,13 @@
     <description>Vendor claims, tested on local hardware. Full records published.</description>
     <lastBuildDate>Fri, 27 Nov 2026 00:00:00 +0000</lastBuildDate>
     <item>
+      <title>FLUX.3 Klein on the RX 7900 XT: Nine and a Half Seconds a Frame</title>
+      <link>https://aft3rburn.github.io/Bench-Records/posts/rx-7900-xt-flux-klein-2026-11-27.html</link>
+      <guid>https://aft3rburn.github.io/Bench-Records/posts/rx-7900-xt-flux-klein-2026-11-27.html</guid>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 +0000</pubDate>
+      <description>The last card takes the fox test. The RX 7900 XT, the card that powers the house assistant by day, ran FLUX.3 Klein under ROCm with no patches and no drama: 18.61 seconds cold, 9.49 warm, second...</description>
+    </item>
+    <item>
       <title>FLUX.3 Klein on a Blackwell Laptop Card: Four Seconds a Frame</title>
       <link>https://aft3rburn.github.io/Bench-Records/posts/blackwell-flux-klein-2026-11-27.html</link>
       <guid>https://aft3rburn.github.io/Bench-Records/posts/blackwell-flux-klein-2026-11-27.html</guid>
